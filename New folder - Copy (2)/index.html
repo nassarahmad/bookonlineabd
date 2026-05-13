@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🎓 حفل التخرج - عبدالرحمن اياد الطيراوي</title>
+    <link rel="icon" type="image/jpeg" href="photo/img3mygraduation.jpeg">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Cairo', sans-serif;
+            height: 100vh;
+            overflow: hidden;
+            position: relative;
+        }
+
+        /* الصورة كخلفية تغطي الصفحة كاملة */
+        .background-image {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('photo/backgoundindex.jpeg');
+            background-size: contain;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-color: #000;
+            z-index: 0;
+        }
+
+        /* طبقة تعتيم خفيفة */
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.2);
+            z-index: 1;
+        }
+
+        /* الحاوية الرئيسية */
+        .content {
+            position: relative;
+            z-index: 2;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+
+        /* العنوان */
+        .welcome-title {
+            font-size: 64px;
+            font-weight: 900;
+            background: linear-gradient(135deg, #FFD700 0%, #FDB931 50%, #FFD700 100%);
+            background-size: 200% 200%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: shimmer 3s infinite, fadeInDown 1s ease-out;
+            margin-bottom: 30px;
+            text-shadow: 0 0 30px rgba(255,215,0,0.5);
+            filter: drop-shadow(0 0 10px rgba(0,0,0,0.8));
+        }
+
+        @keyframes shimmer {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        @keyframes fadeInDown {
+            from { opacity: 0; transform: translateY(-50px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* النص */
+        .welcome-subtitle {
+            font-size: 32px;
+            color: #FFD700;
+            margin-bottom: 50px;
+            animation: fadeIn 1.5s ease-out;
+            text-shadow: 
+                0 0 20px rgba(0,0,0,0.9),
+                0 0 40px rgba(255,215,0,0.5);
+            font-weight: 700;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        /* الزر */
+        .welcome-button {
+            padding: 25px 80px;
+            background: linear-gradient(135deg, #FFD700 0%, #FDB931 100%);
+            border: none;
+            border-radius: 50px;
+            color: #000;
+            font-size: 36px;
+            font-weight: 900;
+            cursor: pointer;
+            transition: all 0.3s;
+            box-shadow: 
+                0 15px 50px rgba(255,215,0,0.6),
+                0 0 50px rgba(0,0,0,0.5);
+            animation: buttonPulse 2s infinite, fadeInUp 1.5s ease-out;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+        }
+
+        @keyframes buttonPulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(50px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .welcome-button:hover {
+            transform: translateY(-8px) scale(1.1);
+            box-shadow: 
+                0 25px 70px rgba(255,215,0,0.8),
+                0 0 80px rgba(0,0,0,0.7);
+        }
+
+        .welcome-button:active {
+            transform: translateY(-4px) scale(1.08);
+        }
+
+        /* استجابة للموبايل */
+        @media (max-width: 768px) {
+            .welcome-title {
+                font-size: 42px;
+            }
+
+            .welcome-subtitle {
+                font-size: 22px;
+                padding: 0 20px;
+            }
+
+            .welcome-button {
+                padding: 20px 50px;
+                font-size: 24px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- الصورة كخلفية -->
+    <div class="background-image"></div>
+    
+    <!-- طبقة تعتيم -->
+    <div class="overlay"></div>
+
+    <!-- المحتوى -->
+    <div class="content">
+        <h1 class="welcome-title">🎓 حفل التخرج</h1>
+        <p class="welcome-subtitle">عبدالرحمن اياد الطيراوي</p>
+        <button class="welcome-button" onclick="enterSite()">
+            أهلاً وسهلاً ✨
+        </button>
+    </div>
+
+    <script>
+        // الانتقال إلى صفحة التخرج
+        function enterSite() {
+            // تأثير انتقال سلس
+            document.body.style.transition = 'opacity 0.5s';
+            document.body.style.opacity = '0';
+            
+            setTimeout(() => {
+                window.location.href = 'my-graduation.html';
+            }, 500);
+        }
+    </script>
+</body>
+</html>
