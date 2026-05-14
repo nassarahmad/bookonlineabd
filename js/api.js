@@ -1,7 +1,9 @@
 // ====================================
 // API Configuration
 // ====================================
-const API_BASE_URL = 'http://localhost:5000/api';
+// للتطوير المحلي: http://localhost:5000/api
+// للإنتاج: https://bookonlineabd.onrender.com/api
+const API_BASE_URL = 'https://bookonlineabd.onrender.com/api';
 
 // ====================================
 // User Functions (للزوار)
